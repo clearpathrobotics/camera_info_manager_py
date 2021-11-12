@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.0.2)
 project(camera_info_manager_py)
 
 find_package(catkin REQUIRED COMPONENTS rospy sensor_msgs)
@@ -6,6 +6,12 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 
 catkin_python_setup()
 catkin_package(CATKIN_DEPENDS sensor_msgs)
+
+catkin_install_python(
+  PROGRAMS 
+    src/camera_info_manager/camera_info_manager.py
+    src/camera_info_manager/zoom_camera_info_manager.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 # Unit test uses nose, but needs rostest to create a ROS environment.
 if (CATKIN_ENABLE_TESTING)
