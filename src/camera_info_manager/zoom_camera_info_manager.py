@@ -256,7 +256,7 @@ class InterpolatingZoomCameraInfoManager(ZoomCameraInfoManager):
         if not self.isCalibrated() or self._camera_infos is None:
             return
 
-        if self._zoom in self._camera_infos.keys():
+        if self._zoom in list(self._camera_infos.keys()):
             self.camera_info = deepcopy(self._camera_infos[self._zoom])
             return
 
@@ -305,5 +305,5 @@ class InterpolatingZoomCameraInfoManager(ZoomCameraInfoManager):
                 rospy.logerr("Invalid camera calibration URL: " + resolved_url)
                 self._camera_infos[zoom_level] = CameraInfo()
 
-        if len(self._camera_infos.keys()) < 2:
+        if len(list(self._camera_infos.keys())) < 2:
             raise CameraInfoError('Interpolating zoom camera info manager needs at least two calibrations to exist.')
