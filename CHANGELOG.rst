@@ -2,6 +2,11 @@
 Changelog for package camera_info_manager_py
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* changelog
+* Contributors: José Mastrangelo
+
 0.3.0 (2021-11-18)
 ------------------
 * added CPR maintainer
