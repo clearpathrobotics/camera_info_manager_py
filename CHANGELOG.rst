@@ -2,8 +2,8 @@
 Changelog for package camera_info_manager_py
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.1 (2021-11-18)
+------------------
 * changelog
 * Contributors: José Mastrangelo
 
