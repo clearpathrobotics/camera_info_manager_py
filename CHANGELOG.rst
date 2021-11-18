@@ -10,13 +10,13 @@ Changelog for package camera_info_manager_py
 
 0.2.3 (2014-05-13)
 ------------------
-* Only use rostest when testing enabled (`#6`_), thanks to Lukas Bulwahn.
+* Only use rostest when testing enabled, thanks to Lukas Bulwahn.
 * Move repository to ros-perception.
 * Contributors: Jack O'Quin, Lukas Bulwahn
 
 0.2.2 (2013-07-25)
 ------------------
-* Add namespace parameter to constructor (`#9`), so a driver can handle multiple cameras. Enhancement thanks to Martin Llofriu.
+* Add namespace parameter to constructor, so a driver can handle multiple cameras. Enhancement thanks to Martin Llofriu.
 * Make unit tests conditional on ``CATKIN_ENABLE_TESTING``.
 * Release to Groovy and Hydro.
 * Contributors: Jack O'Quin, mllofriu
@@ -29,8 +29,8 @@ Changelog for package camera_info_manager_py
 
 0.2.0 (2013-03-28)
 ------------------
-* Convert to catkin (`#3`).
-* Remove roslib dependency (`#4`).
+* Convert to catkin.
+* Remove roslib dependency.
 * Release to Groovy and Hydro.
 * Contributors: Jack O'Quin
 
