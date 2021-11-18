@@ -2,8 +2,8 @@
 Changelog for package camera_info_manager_py
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.0 (2021-11-18)
+------------------
 * added CPR maintainer
 * Release to Melodic and Noetic
 * Contributors: Jack O'Quin, José Mastrangelo, Lucas Walter, Martin Pecka
