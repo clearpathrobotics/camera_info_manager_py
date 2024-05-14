@@ -40,8 +40,6 @@ A similar C++ API does not exist yet.
 from math import radians, tan
 from copy import deepcopy
 
-import rclpy
-
 from sensor_msgs.msg import CameraInfo
 
 from camera_info_manager import CameraInfoManager, CameraInfoError, CameraInfoMissingError, \

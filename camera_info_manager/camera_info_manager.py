@@ -47,7 +47,6 @@ import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import CameraInfo
 from sensor_msgs.srv import SetCameraInfo
-from sensor_msgs.srv import SetCameraInfoResponse
 
 import os
 import errno
@@ -327,7 +326,7 @@ class CameraInfoManager():
         """
         self.node.get_logger().debug('SetCameraInfo received for ' + self.cname)
         self.camera_info = req.camera_info
-        rsp = SetCameraInfoResponse()
+        rsp = SetCameraInfo.Response()
         rsp.success = saveCalibration(req.camera_info,
                                       self.url, self.cname)
         if not rsp.success:
