@@ -1,14 +1,18 @@
 #!/usr/bin/env python
 
-import rospy
+import rclpy
+from rclpy.node import Node
 import camera_info_manager
 import yaml
 
 from sensor_msgs.msg import CameraInfo
 # from sensor_msgs.srv import SetCameraInfo()
 
-rospy.init_node("generate_camera_info_py")
-ci = CameraInfo()
+rclpy.init()
+
+node = rclpy.create_node("generate_camera_info_py")
+
+ci = CameraInfo(node)
 cname = "camera"
 camera_info_manager.saveCalibrationFile(ci, "camera_info_manager_py.yaml", cname)
 

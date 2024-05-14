@@ -36,12 +36,11 @@
 A similar C++ API does not exist yet.
 """
 # enable some python3 compatibility options:
-from __future__ import absolute_import, print_function, unicode_literals
 
 from math import radians, tan
 from copy import deepcopy
 
-import rospy
+import rclpy
 
 from sensor_msgs.msg import CameraInfo
 
@@ -290,7 +289,7 @@ class InterpolatingZoomCameraInfoManager(ZoomCameraInfoManager):
             if url_type == URL_empty:
                 raise CameraInfoError('Zoom camera cannot use default calibration URLs.')
 
-            rospy.loginfo('camera calibration URL for zoom level %d: %s' % (zoom_level, resolved_url))
+            self.node.get_logger().info('camera calibration URL for zoom level %d: %s' % (zoom_level, resolved_url))
 
             if url_type == URL_file:
                 self._camera_infos[zoom_level] = loadCalibrationFile(resolved_url[7:], self.cname)
@@ -302,7 +301,7 @@ class InterpolatingZoomCameraInfoManager(ZoomCameraInfoManager):
                 self._camera_infos[zoom_level] = loadCalibrationFile(filename, self.cname)
 
             else:
-                rospy.logerr("Invalid camera calibration URL: " + resolved_url)
+                self.node.get_logger().error("Invalid camera calibration URL: " + resolved_url)
                 self._camera_infos[zoom_level] = CameraInfo()
 
         if len(list(self._camera_infos.keys())) < 2:
