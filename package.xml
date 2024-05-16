@@ -19,11 +19,8 @@
   <url type="repository">https://github.com/ros-perception/camera_info_manager_py.git</url>
   <url type="bugtracker">https://github.com/ros-perception/camera_info_manager_py/issues</url>
 
-  <buildtool_depend>ament_cmake</buildtool_depend>
   <buildtool_depend>python3-setuptools</buildtool_depend>
 
-  <build_depend>ament_cmake_gtest</build_depend>
-  <build_depend>camera_info_manager</build_depend>
   <build_depend>rclpy</build_depend>
   <build_depend>sensor_msgs</build_depend>
 
@@ -31,8 +28,6 @@
   <exec_depend>python3-yaml</exec_depend>
   <exec_depend>rclpy</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
-
-  <test_depend>rosunit</test_depend>
 
   <export>
     <rosdoc config="rosdoc.yaml"/>
