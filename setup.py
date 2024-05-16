@@ -1,5 +1,5 @@
 import os
-from glob import glob
+
 from setuptools import setup
 
 package_name = 'camera_info_manager_py'
