@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-# Software License Agreement (BSD License)
-#
-# Copyright (C) 2016, Martin Pecka
+# Copyright 2016, Martin Pecka
 # All rights reserved.
+#
+# Software License Agreement (BSD License 2.0)
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -14,9 +14,9 @@
 #    copyright notice, this list of conditions and the following
 #    disclaimer in the documentation and/or other materials provided
 #    with the distribution.
-#  * Neither the name of the author nor of other contributors may be
-#    used to endorse or promote products derived from this software
-#    without specific prior written permission.
+#  * Neither the name of Martin Pecka nor the names of its
+#    contributors may be used to endorse or promote products derived
+#    from this software without specific prior written permission.
 #
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 # "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
@@ -47,13 +47,13 @@ from camera_info_manager import (
     CameraInfoError,
     CameraInfoManager,
     CameraInfoMissingError,
-    URL_empty,
-    URL_file,
-    URL_package,
     getPackageFileName,
     loadCalibrationFile,
     parseURL,
     resolveURL,
+    URL_empty,
+    URL_file,
+    URL_package,
 )
 
 
@@ -270,7 +270,9 @@ class InterpolatingZoomCameraInfoManager(ZoomCameraInfoManager):
     code doesn't know this is a zoom camera
     """
 
-    def __init__(self, calibration_url_template, zoom_levels, cname='camera', url='', namespace=''):
+    def __init__(
+        self, calibration_url_template, zoom_levels, cname='camera', url='', namespace=''
+    ):
         """
         Construct the manager.
 

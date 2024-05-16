@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-# Software License Agreement (BSD License)
-#
-# Copyright (C) 2012, Jack O'Quin
+# Copyright 2012, Jack O'Quin
 # All rights reserved.
+#
+# Software License Agreement (BSD License 2.0)
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -14,9 +14,9 @@
 #    copyright notice, this list of conditions and the following
 #    disclaimer in the documentation and/or other materials provided
 #    with the distribution.
-#  * Neither the name of the author nor of other contributors may be
-#    used to endorse or promote products derived from this software
-#    without specific prior written permission.
+#  * Neither the name of Jack O'Quin nor the names of its
+#    contributors may be used to endorse or promote products derived
+#    from this software without specific prior written permission.
 #
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 # "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
@@ -47,13 +47,12 @@ import locale
 import os
 from pathlib import Path
 
+import rclpy
+from rclpy.node import Node
 import rospkg
 from sensor_msgs.msg import CameraInfo
 from sensor_msgs.srv import SetCameraInfo
 import yaml
-
-import rclpy
-from rclpy.node import Node
 
 default_camera_info_url = 'file://${ROS_HOME}/camera_info/${NAME}.yaml'
 # parseURL() type codes:
@@ -585,7 +584,9 @@ def saveCalibration(new_info, url, cname):
     if url_type == URL_empty:
         return saveCalibration(new_info, default_camera_info_url, cname)
 
-    rclpy.get_logger('camera_info_manager').info('writing calibration data to URL: ' + resolved_url)
+    rclpy.get_logger('camera_info_manager').info(
+        'writing calibration data to URL: ' + resolved_url
+    )
 
     if url_type == URL_file:
         success = saveCalibrationFile(new_info, resolved_url[7:], cname)
@@ -673,6 +674,7 @@ def saveCalibrationFile(ci, filename, cname):
                     return True
 
                 except OSError:
-                    rclpy.get_logger('camera_info_manager').error('file [' + filename +
-                                                                  '] not accessible')
+                    rclpy.get_logger('camera_info_manager').error(
+                        'file [' + filename + '] not accessible'
+                    )
                     return False  # fail if unable to write file
